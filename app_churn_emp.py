@@ -7,9 +7,14 @@ html_temp = """
 <h2 style="color:white;text-align:center;">Predict Churn of Your Employee</h2>
 </div><br><br>"""
 
-st.title('Welcome to the Employee Churn App')
-st.subheader('In this project, you will able to predict the churn status of an employee, regarding the performance and features of her/him')
+from PIL import Image
+img = Image.open("eliar.jpg")
+st.image(img)
 
+st.title('Welcome to the ELIAR LLC Employee Churn App')
+st.subheader('In this project, Osman or any other employee will be able to predict the churn status, regarding the performance and features of her/him')
+
+st.write("Guys, don't hesitate to try!")
          
 st.markdown(html_temp,unsafe_allow_html=True)
 
@@ -60,7 +65,7 @@ prediction = model.predict(X)
 print(prediction)
 
 if prediction == 1:
-    st.warning("Your employee will LEAVE!")
+    st.error("Your employee will LEAVE!")
 else:
     st.success("Your employee will STAY!")           
     
